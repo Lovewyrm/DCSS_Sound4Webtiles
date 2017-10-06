@@ -1,10 +1,19 @@
 # DCSS_Sound4Webtiles
 Hacky cobble-y-fication of the Korean webtiles sound script realized as a GreaseMonkey script.
 
-Disclaimer: I am not a WebDev.
+Disclaimer: I am not a WebDev. if you are then you can probably do better than this.
+
 This addon will eat up your RAM if you refresh the page too much, I am too inexperienced to fix this.
+But it's fine if you do it in moderation, the culprit seems to be the audio module, its buffers, to be precise.
+
+Opted to load all the sounds immediately (and to play them immediately) and aimed for making them persistent, because in the first version of this thing sounds wouldn't play immediately and the buffers had to take a while to be filled.
 
 I went for the route of embedding the sound files as base64 strings, which bloats the script and makes it a pain to edit and possibly view, if your text editor sucks, but it loads quite snappily.
+Plus, it doesn't require any cross domain hackery, which seem to be a security risk.
+
+Kept the code at the top, the big bloaty stuff is at the bottom. Be sure to use a text editor, or text editor setting that can disable linewrapping.
+The whole thing itself is put in a "load" event listener.
+
 
 
 ## Installation
